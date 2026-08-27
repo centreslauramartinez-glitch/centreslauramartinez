@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Centres Laura Martínez</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@400;500;600&display=swap');
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;font-family:Montserrat,Arial,sans-serif}
+body{background:#e6e0d7;color:#292725}
+.hero{height:100vh;min-height:650px;position:relative;overflow:hidden;background:#b0a89e}
+.hero:before{content:"";position:absolute;inset:0;background:url("assets/index-design.png") center center/cover no-repeat;transform:scale(1.001)}
+/* capa interactiva transparente: el diseño de referencia queda intacto */
+.topbar{position:absolute;inset:0 0 auto 0;height:125px;z-index:3}
+.logo-real{position:absolute;left:50%;top:22px;transform:translateX(-50%);width:min(26vw,430px);height:72px;object-fit:contain;opacity:0}
+/* El logo original se conserva en assets y se usará en la versión final con foto separada. */
+.hotspot{position:absolute;z-index:4;display:block}
+.treat{left:3%;top:2%;width:9%;height:11%}.clinic{left:11%;top:2%;width:7%;height:11%}
+.us{left:19%;top:2%;width:8%;height:11%}.promo{right:22%;top:2%;width:10%;height:11%}
+.contact{right:14%;top:2%;width:8%;height:11%}.book{right:5%;top:2%;width:9%;height:11%}
+.cta{left:6%;top:67%;width:17%;height:18%}
+.after{min-height:70vh;padding:120px 10vw;background:#eee9e1}
+.after small{letter-spacing:4px;color:#a98246;font-size:10px}
+.after h2{font:400 clamp(52px,7vw,100px)/.9 "Cormorant Garamond",Georgia,serif;margin:30px 0;color:#282522}
+@media(max-width:700px){
+.hero{min-height:620px}.hero:before{background-position:62% center}
+.after{padding:80px 30px}
+}
+</style>
+</head>
+<body>
+<section class="hero" aria-label="Centres Laura Martínez">
+  <a class="hotspot treat" href="#tratamientos" aria-label="Tratamientos"></a>
+  <a class="hotspot clinic" href="#clinicas" aria-label="Clínicas"></a>
+  <a class="hotspot us" href="#nosotros" aria-label="Nosotros"></a>
+  <a class="hotspot promo" href="#promociones" aria-label="Promociones"></a>
+  <a class="hotspot contact" href="#contacto" aria-label="Contacto"></a>
+  <a class="hotspot book" href="#reserva" aria-label="Reservar cita"></a>
+  <a class="hotspot cta" href="#descubrir" aria-label="Descubrir más"></a>
+  <img class="logo-real" src="assets/logo-original.png" alt="Laura Martínez">
+</section>
+<section class="after" id="descubrir">
+<small>CENTRES LAURA MARTÍNEZ</small>
+<h2>Una experiencia<br>que empieza aquí.</h2>
+</section>
+</body>
+</html>
