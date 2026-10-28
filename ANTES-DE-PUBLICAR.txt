@@ -1,0 +1,26 @@
+LAURA MARTÍNEZ CLINIC — CHECKLIST ANTES DE PUBLICAR
+
+IDENTIDAD INCORPORADA EN LAS 8 PÁGINAS LEGALES
+Titular indicado: Laura Martinez Rodriguez
+NIF indicado: 52165737N
+Dirección indicada: C/ de les Travesseres 21-23, 08401 Granollers, Barcelona, España
+Contacto publicado en la web: laura@centreslauramartinez.com
+
+CAMBIOS PREPARADOS EN EL ZIP
+- Títulos SEO y metadatos de las cuatro portadas.
+- Idioma HTML revisado en páginas de tratamientos.
+- sitemap.xml y robots.txt.
+- Enlaces telefónicos para llamada desde móvil.
+- Casilla obligatoria con enlace a privacidad en los formularios generales.
+- Páginas de aviso legal y privacidad en castellano, catalán, inglés y francés.
+
+NO PUBLICAR SIN REVISAR ESTOS PUNTOS
+1. Confirmar que el correo laura@centreslauramartinez.com es el contacto adecuado para privacidad y ejercicio de derechos.
+2. Validar con asesoría la información legal final y si corresponden datos registrales o administrativos adicionales.
+3. Confirmar base jurídica, plazos de conservación, destinatarios/proveedores, condiciones de FormSubmit y posibles transferencias internacionales.
+4. Comprobar que el formulario no solicite ni reciba datos clínicos o de salud; si se necesitan, usar un canal adecuado y una base jurídica revisada.
+5. Revisar las traducciones legales antes de producción.
+6. Verificar dominio principal, funcionamiento de HTTPS, enlaces y formularios publicados. Enviar el sitemap desde Google Search Console.
+7. No borrar la web gratuita de Wix hasta confirmar que centreslauramartinez.com funciona bien en Cloudflare Pages y localizar la URL exacta de Wix.
+
+No se ha publicado ni desplegado este ZIP. Las páginas legales son un borrador técnico y deben validarse antes de producción.
