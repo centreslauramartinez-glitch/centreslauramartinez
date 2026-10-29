@@ -62,3 +62,11 @@ html.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease
   .contact-grid > * { width: 100%; }
   .contact-grid .form { width: 100%; }
 }
+
+/* Formulario: evita desbordamientos en pantallas pequeñas */
+.form, .form * { box-sizing: border-box; }
+.form { min-width: 0; max-width: 100%; }
+.form input, .form select, .form textarea { width: 100%; min-width: 0; max-width: 100%; }
+.form .privacy-consent { display:flex; align-items:flex-start; gap:.65rem; max-width:100%; min-width:0; }
+.form .privacy-consent span { min-width:0; overflow-wrap:anywhere; }
+@media(max-width:700px){.contact{grid-template-columns:1fr!important;gap:28px!important}.form{width:100%;}}
