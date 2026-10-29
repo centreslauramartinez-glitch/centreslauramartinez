@@ -13,7 +13,7 @@
 <section class="rp-section"><div class="container rp-grid"><div><div class="eyebrow">01 · The proposal</div><h2 class="rp-h2">An edition<br>for post-summer skin</h2></div><div><p class="rp-copy">Summer ends, but its effects on the skin don’t have to linger. Precision diagnosis and a post-solar cellular recovery protocol.</p><div class="rp-rule"></div><p class="rp-copy">A precise look at the skin after summer, with a protocol designed to support its recovery and restore balance, quality and luminosity.</p></div></div></section>
 <section class="rp-section rp-alt"><div class="container rp-editorial"><div class="rp-image"><img src="image-3.jpeg" alt="Piel y bienestar — Laura Martínez Clinic"></div><div><div class="eyebrow">02 · The protocol</div><h2 class="rp-h2">Precision before excess.</h2><div style="margin-top:36px"><div class="rp-feature"><h3>Precision diagnosis</h3><p>The starting point for understanding the condition of the skin at the end of summer.</p></div><div class="rp-feature"><h3>Post-solar protocol</h3><p>A specific post-solar recovery protocol integrated into the RENEWAL PASS.</p></div><div class="rp-feature"><h3>Limited edition</h3><p>15 passes available. Available during this special edition.</p></div></div></div></div></section>
 <section class="rp-section"><div class="container rp-grid"><div><div class="eyebrow">03 · The experience</div><h2 class="rp-h2">Caring for the skin<br><em>is also about precision.</em></h2><p class="rp-copy" style="margin-top:32px">The philosophy of Laura Martínez Clinic remains unchanged: diagnosis, personalisation and a natural approach to results.</p></div><div class="rp-image-wide"><img src="image-10.jpeg" alt="Laura Martínez Clinic en Granollers"></div></div></section>
-<section class="rp-final" id="solicitar"><div class="container"><div class="eyebrow">Private request</div><h2 class="rp-h2">Your RENEWAL PASS</h2><p>Request your Private Pass and the Laura Martínez Clinic team will contact you to assess your needs.</p><form class="rp-form" action="https://formsubmit.co/laura@centreslauramartinez.com" method="POST"><input type="hidden" name="_subject" value="Private request RENEWAL PASS"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_template" value="table"><input type="hidden" name="_next" value="https://centreslauramartinez.com/renewal-pass-en.html?enviado=1"><input required placeholder="Name" name="name"><input required placeholder="Phone" name="phone"><input type="email" placeholder="Email" name="email"><textarea placeholder="Tell us briefly what you would like to assess">< name="message"></textarea><button class="rp-submit" type="submit">Request Private Pass →</button><a class="rp-submit whatsapp-rp" href="https://wa.me/34663900609?text=Hola%20Laura%20Mart%C3%ADnez%20Clinic%2C%20me%20interesa%20el%20RENEWAL%20PASS." target="_blank" rel="noopener">Open WhatsApp</a><p class="form-submit-status" data-formsubmit-status role="status" aria-live="polite" style="display:none;white-space:normal;overflow-wrap:anywhere;max-width:100%;font-size:.85rem;line-height:1.5;margin:12px 0"></p></form><div class="availability">15 passes available</div></div></section></main><footer class="rp-footer">Laura Martínez Clinic · Granollers</footer>
+<section class="rp-final" id="solicitar"><div class="container"><div class="eyebrow">Private request</div><h2 class="rp-h2">Your RENEWAL PASS</h2><p>Request your Private Pass and the Laura Martínez Clinic team will contact you to assess your needs.</p><form class="rp-form" action="https://formsubmit.co/laura@centreslauramartinez.com" method="POST"><input type="hidden" name="_subject" value="Private request RENEWAL PASS"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_template" value="table"><input type="hidden" name="_next" value="https://centreslauramartinez.com/renewal-pass-en.html?enviado=1"><input required placeholder="Name" name="name"><input required placeholder="Phone" name="phone"><input type="email" placeholder="Email" name="email"><textarea placeholder="Tell us briefly what you would like to assess">< name="message"></textarea><button class="rp-submit" type="submit">Request Private Pass →</button><a class="rp-submit whatsapp-rp" href="https://wa.me/34663900609?text=Hola%20Laura%20Mart%C3%ADnez%20Clinic%2C%20me%20interesa%20el%20RENEWAL%20PASS." target="_blank" rel="noopener">Open WhatsApp</a></form><div class="availability">15 passes available</div></div></section></main><footer class="rp-footer">Laura Martínez Clinic · Granollers</footer>
 <script>(function(){const h=document.querySelector('.site-header');const u=()=>h.classList.toggle('scrolled',scrollY>32);u();addEventListener('scroll',u,{passive:true})})();</script><nav class="legal-footer-links" aria-label="Información legal" style="padding:18px 24px;text-align:center;font:12px/1.6 Arial,sans-serif;color:#68615a;background:#f5f0e8"><a href="aviso-legal-en.html">Legal notice</a><span aria-hidden="true"> · </span><a href="privacidad-en.html">Privacy</a></nav>
 <script id="formsubmit-ajax-handler">
 (function () {
@@ -21,45 +21,57 @@
   forms.forEach(function (form) {
     if (form.dataset.ajaxBound === '1') return;
     form.dataset.ajaxBound = '1';
+    let status = form.querySelector('[data-formsubmit-status]');
+    if (!status) {
+      status = document.createElement('p');
+      status.setAttribute('data-formsubmit-status', '');
+      status.setAttribute('role', 'status');
+      status.setAttribute('aria-live', 'polite');
+      status.style.cssText = 'display:none;white-space:normal;overflow-wrap:anywhere;max-width:100%;font-size:.85rem;line-height:1.5;margin:12px 0';
+      form.appendChild(status);
+    }
     form.addEventListener('submit', async function (event) {
       event.preventDefault();
       const button = form.querySelector('button[type="submit"], input[type="submit"]');
-      let status = form.querySelector('[data-formsubmit-status]');
-      if (!status) {
-        status = document.createElement('p');
-        status.setAttribute('role', 'status');
-        status.setAttribute('aria-live', 'polite');
-        status.style.cssText = 'white-space:normal;overflow-wrap:anywhere;max-width:100%;font-size:.85rem;line-height:1.5;margin:12px 0';
-        form.appendChild(status);
-      }
       const originalLabel = button ? (button.tagName === 'INPUT' ? button.value : button.textContent) : '';
-      const setStatus = function (message, ok) {
+      function show(message, ok) {
         status.textContent = message;
         status.style.display = 'block';
         status.style.color = ok ? '#28734a' : '#a12d2d';
-      };
+      }
       if (button) {
         button.disabled = true;
         if (button.tagName === 'INPUT') button.value = 'Enviando…';
         else button.textContent = 'Enviando…';
       }
       try {
+        const data = {};
+        new FormData(form).forEach(function (value, key) {
+          if (Object.prototype.hasOwnProperty.call(data, key)) {
+            data[key] = Array.isArray(data[key]) ? data[key].concat(String(value)) : [data[key], String(value)];
+          } else {
+            data[key] = String(value);
+          }
+        });
         const action = form.getAttribute('action').replace('https://formsubmit.co/', 'https://formsubmit.co/ajax/');
         const response = await fetch(action, {
           method: 'POST',
-          body: new FormData(form),
-          headers: { 'Accept': 'application/json' }
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(data)
         });
+        const raw = await response.text();
         let result = {};
-        try { result = await response.json(); } catch (_) {}
-        if (!response.ok || result.success === 'false' || result.success === false) {
-          const detail = result.message || result.error || 'El servicio de envío ha rechazado la solicitud.';
-          throw new Error(detail);
+        try { result = raw ? JSON.parse(raw) : {}; } catch (_) {}
+        const success = result.success === true || result.success === 'true';
+        if (!response.ok || !success) {
+          const detail = result.message || result.error || (raw && raw.slice(0, 240)) || ('HTTP ' + response.status);
+          show('FormSubmit no ha aceptado el envío: ' + detail, false);
+          return;
         }
         form.reset();
-        setStatus('Gracias. Tu solicitud se ha enviado correctamente. Si no recibes respuesta, puedes llamar al centro.', true);
+        show('Gracias. La solicitud se ha enviado correctamente.', true);
       } catch (error) {
-        setStatus('No se ha podido confirmar el envío. No vuelvas a enviar datos médicos por este formulario. Prueba de nuevo más tarde o contacta con el centro por teléfono o WhatsApp.', false);
+        show('No se ha podido conectar con FormSubmit. Comprueba la conexión e inténtalo más tarde. Detalle: ' + (error && error.message ? error.message : 'error de red o CORS'), false);
       } finally {
         if (button) {
           button.disabled = false;
