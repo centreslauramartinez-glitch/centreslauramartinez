@@ -19,3 +19,46 @@ html.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease
 @media(max-width:1000px){.site-header{padding-inline:22px}.nav-side{gap:11px}.nav a{font-size:.56rem;letter-spacing:.15em}.logo{width:min(205px,24vw)}.cards{grid-template-columns:repeat(2,1fr)}.intro-grid,.editorial-grid,.laura-grid,.center-grid,.skin-grid,.contact-grid{gap:55px}}
 @media(max-width:760px){.container{width:min(calc(100% - 36px),var(--max))}.site-header{padding:18px 18px 0}.nav{grid-template-columns:1fr auto;min-height:42px}.nav-side{display:none}.logo{grid-column:auto;display:block;position:absolute;left:50%;top:0;transform:translateX(-50%);width:170px;z-index:2}.nav:after{display:none}.mobile-menu{display:grid;grid-column:2;justify-self:end;z-index:4}.mobile-panel{position:absolute;top:68px;left:18px;right:18px;background:rgba(31,28,24,.96);padding:22px;display:none;flex-direction:column;gap:17px}.mobile-panel.open{display:flex}.mobile-panel a{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:#fff}.hero{min-height:900px}.hero-image{object-position:63% center}.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,12,10,.14),rgba(15,12,10,.12) 45%,rgba(15,12,10,.46));z-index:1}.hero-content{min-height:900px;align-items:flex-end;padding:150px 0 72px}.hero-copy{width:100%;max-width:520px}.hero h1{font-size:clamp(3.5rem,17vw,5.2rem);margin-bottom:28px}.hero .eyebrow{margin-bottom:18px}.hero-lead{font-size:.61rem;letter-spacing:.18em}.intro,.editorial,.laura,.center-section,.skin,.contact{padding:95px 0}.intro-grid,.editorial-grid,.laura-grid,.center-grid,.skin-grid,.contact-grid{grid-template-columns:1fr}.intro-grid{gap:55px}.intro h2{font-size:3rem} .intro-content .eyebrow{margin-bottom:28px}.intro-content h2{font-size:clamp(2.55rem,11vw,3.25rem);margin-bottom:38px;line-height:.96}.intro-copy{font-size:1.18rem}.intro-media{aspect-ratio:4/5;order:2}.cards,.tech-grid{grid-template-columns:1fr}.card{min-height:440px}.card-content{left:22px;right:22px;bottom:22px}.card h3{font-size:2rem}.card p{font-size:.72rem;line-height:1.5}.section-head{display:block}.section-head p{margin-top:20px}.method{grid-template-columns:1fr;gap:20px}.skin-list{grid-template-columns:1fr}.contact h2{font-size:3.5rem}.footer-grid{display:block}.footer-links{margin-top:18px;flex-wrap:wrap}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.card img{transition:none}}
+
+
+/* Mobile form overflow and privacy-consent wrapping */
+.form { min-width: 0; }
+.form input, .form select, .form textarea { box-sizing: border-box; min-width: 0; max-width: 100%; }
+.form .privacy-consent { display: flex; align-items: flex-start; gap: .65rem; width: 100%; max-width: 100%; min-width: 0; box-sizing: border-box; }
+.form .privacy-consent > input[type="checkbox"] { flex: 0 0 18px; width: 18px; min-width: 18px; max-width: 18px; margin: .25rem 0 0; }
+.form .privacy-consent > span { display: block; flex: 1 1 0; min-width: 0; overflow-wrap: anywhere; word-break: normal; }
+.form .privacy-consent a { overflow-wrap: anywhere; }
+@media (max-width: 700px) {
+  .contact { grid-template-columns: 1fr !important; gap: 28px !important; }
+  .form { width: 100%; max-width: 100%; }
+}
+
+
+
+/* Ajuste definitivo del contacto y del aviso de privacidad en móvil */
+.contact-grid { min-width: 0; }
+.contact-grid > *, .contact-grid .form { min-width: 0; max-width: 100%; }
+.contact-grid .form { box-sizing: border-box; }
+.contact-grid .form input,
+.contact-grid .form select,
+.contact-grid .form textarea { box-sizing: border-box; width: 100%; max-width: 100%; min-width: 0; }
+.contact-grid .privacy-consent {
+  display: flex !important; align-items: flex-start !important; gap: .65rem;
+  width: 100%; max-width: 100%; min-width: 0; box-sizing: border-box;
+  white-space: normal; overflow-wrap: anywhere;
+}
+.contact-grid .privacy-consent input[type="checkbox"] {
+  flex: 0 0 18px !important; width: 18px !important; min-width: 18px !important;
+  max-width: 18px !important; margin: .25rem 0 0 !important;
+}
+.contact-grid .privacy-consent span {
+  display: block; flex: 1 1 0; min-width: 0; white-space: normal;
+  overflow-wrap: anywhere; word-break: normal;
+}
+.contact-grid .privacy-consent a { overflow-wrap: anywhere; }
+.privacy-contact { overflow-wrap: anywhere; }
+@media (max-width: 760px) {
+  .contact-grid { display: grid !important; grid-template-columns: minmax(0, 1fr) !important; gap: 32px !important; }
+  .contact-grid > * { width: 100%; }
+  .contact-grid .form { width: 100%; }
+}
