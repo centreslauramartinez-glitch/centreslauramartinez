@@ -34,7 +34,13 @@ html.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease
 .black-friday-float span{font-size:.68rem;letter-spacing:.17em;color:#dfc58e;white-space:nowrap}
 .black-friday-float small{font-size:.59rem;letter-spacing:.04em;color:rgba(255,255,255,.82);white-space:nowrap}
 .black-friday-float b{font-size:1rem;font-weight:400;color:#dfc58e}
-@media(max-width:760px){.black-friday-float{right:14px;bottom:14px;gap:8px;padding:9px 12px}.black-friday-float span{font-size:.62rem}.black-friday-float small{font-size:.53rem}}
+@media(max-width:760px){
+.black-friday-float{position:relative;right:auto;bottom:auto;left:auto;transform:none;width:max-content;max-width:calc(100% - 36px);margin:14px auto 0;display:flex;justify-content:center;gap:8px;padding:8px 11px;z-index:20}
+.black-friday-float:hover{transform:none}
+.black-friday-float span{font-size:.62rem}
+.black-friday-float small{font-size:.53rem}
+.black-friday-float b{font-size:.9rem}
+}
 </style><style id="center-polish">
 .center-copy .eyebrow{margin-bottom:30px}
 .center-copy h2{margin-top:0 !important}
